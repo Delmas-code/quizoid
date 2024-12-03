@@ -4,6 +4,11 @@ import { toaster, Toaster } from "../components/ui/toaster"
 import { Fieldset, Flex, Input, Stack } from '@chakra-ui/react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+const https = require('https');
+
+const agent = new https.Agent({
+    rejectUnauthorized: false, // WARNING: This disables SSL validation
+});
 
 function Home() {
     const [username, setUsername] = useState('');
