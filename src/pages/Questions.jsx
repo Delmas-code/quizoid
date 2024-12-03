@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Box, Input, Text } from '@chakra-ui/react';
 import axios from 'axios';
 
-const https = require('https');
+// const https = require('https');
 
 const agent = new https.Agent({
     rejectUnauthorized: false, // WARNING: This disables SSL validation
@@ -53,7 +53,7 @@ function Questions() {
                 maxBodyLength: Infinity,
                 url: `${BASE_URL}/identify/`,
                 data: formData,
-                httpsAgent: agent,
+                // httpsAgent: agent,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
