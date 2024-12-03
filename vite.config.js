@@ -16,6 +16,7 @@ export default defineConfig({
       '/api': {
         target: BASE_URL,
         changeOrigin: true, // Ensures Host header matches target
+        secure: false, // Ignore SSL verification
         rewrite: (path) => path.replace(/^\/api/, ''), // Remove `/api` prefix when forwarding
       },
     },
