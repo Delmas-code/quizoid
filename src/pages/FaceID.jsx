@@ -57,6 +57,7 @@ function FaceID() {
                     maxBodyLength: Infinity,
                     url: `${BASE_URL}/store_snapshots/`,
                     data: formData,
+                    httpsAgent: agent,
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

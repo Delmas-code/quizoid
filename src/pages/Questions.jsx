@@ -53,6 +53,7 @@ function Questions() {
                 maxBodyLength: Infinity,
                 url: `${BASE_URL}/identify/`,
                 data: formData,
+                httpsAgent: agent,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

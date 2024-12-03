@@ -29,6 +29,7 @@ function Home() {
                 maxBodyLength: Infinity,
                 url: `${BASE_URL}/register/`,
                 data: formData,
+                httpsAgent: agent,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
