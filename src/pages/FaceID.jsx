@@ -5,12 +5,7 @@ import DashedProgressCircle from '../components/DashedProgressCircle';
 import {toaster, Toaster} from '../components/ui/toaster';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import https from ""
-// const https = require('https');
 
-// const agent = new https.Agent({
-//     rejectUnauthorized: false, // WARNING: This disables SSL validation
-// });
 
 function FaceID() {
     const navigate = useNavigate();
@@ -56,9 +51,8 @@ function FaceID() {
                 const response = await axios({
                     method: 'post',
                     maxBodyLength: Infinity,
-                    url: `${BASE_URL}/store_snapshots/`,
+                    url: `/api/store_snapshots/`,
                     data: formData,
-                    // httpsAgent: agent,
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

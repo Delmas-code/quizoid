@@ -4,11 +4,6 @@ import { toaster, Toaster } from "../components/ui/toaster"
 import { Fieldset, Flex, Input, Stack } from '@chakra-ui/react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-// const https = require('https');
-
-// const agent = new https.Agent({
-//     rejectUnauthorized: false, // WARNING: This disables SSL validation
-// });
 
 function Home() {
     const [username, setUsername] = useState('');
@@ -27,33 +22,12 @@ function Home() {
             const response = await axios({
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: `${BASE_URL}/register/`,
+                url: `/api/register/`,
                 data: formData,
-                // httpsAgent: agent,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             })
-
-            // const response = fetch(`https://18.227.228.192/register/`, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'multipart/form-data',
-            //     },
-            //     body: formData,
-            // })
-            // .then(response => {
-            //     if (!response.ok) {
-            //         throw new Error(`HTTP error! status: ${response.status}`);
-            //     }
-            //     return response.json();
-            // })
-            // .then(data => {
-            //     console.log(`DATA: ${data}`);
-            // })
-            // .catch(error => {
-            //     console.error('Error:', error);
-            // });
 
             const result = await response.data;
             console.log(`RESULT: ${result}`)

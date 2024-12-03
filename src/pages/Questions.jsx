@@ -2,12 +2,6 @@ import React, { useEffect } from 'react';
 import { Box, Input, Text } from '@chakra-ui/react';
 import axios from 'axios';
 
-// const https = require('https');
-
-// const agent = new https.Agent({
-//     rejectUnauthorized: false, // WARNING: This disables SSL validation
-// });
-
 function Questions() {
     function base64ToBlob(base64) {
         const byteString = atob(base64.split(',')[1]);
@@ -51,9 +45,8 @@ function Questions() {
             const response = await axios({
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: `${BASE_URL}/identify/`,
+                url: `/api/identify/`,
                 data: formData,
-                // httpsAgent: agent,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
